@@ -1,5 +1,6 @@
 package hr.algebra;
 
+import hr.algebra.DAL.VehicleFactory;
 import hr.algebra.models.*;
 
 import java.util.ArrayList;
@@ -14,27 +15,29 @@ public class Solid {
 
         List<Vehicle> smallVehicles = new ArrayList<>(st1.capicity());
 
-        smallVehicles.add(new Car(1, 0.5, 0.2, "Car1"));
-        smallVehicles.add(new Car(2, 0.05, 0, "Car2"));
-        smallVehicles.add(new Car(3, 0.2, 0.01, "Car13"));
-        smallVehicles.add(new Car(4, 0.05, 0, "Car4"));
 
 
-        smallVehicles.add(new Van(1, 0.5, 0.9, "Van1"));
-        smallVehicles.add(new Van(2, 0.05, 1, "Van2"));
-        smallVehicles.add(new Van(3, 0.2, 0.7, "Van3"));
-        smallVehicles.add(new Van(4, 0.05, 1, "Van4"));
+        smallVehicles.add(VehicleFactory.createVehicle("Car",1, 0.5, 0.2, "Car1"));
+        smallVehicles.add(VehicleFactory.createVehicle("Car",2, 0.05, 0.0, "Car2"));
+        smallVehicles.add(VehicleFactory.createVehicle("Car",3, 0.2, 0.01, "Car3"));
+        smallVehicles.add(VehicleFactory.createVehicle("Car",4, 0.05, 0.0, "Car4"));
+
+
+        smallVehicles.add(VehicleFactory.createVehicle("Van",1, 0.5, 0.9, "Van1"));
+        smallVehicles.add(VehicleFactory.createVehicle("Van",2, 0.05, 1.0, "Van2"));
+        smallVehicles.add(VehicleFactory.createVehicle("Van",3, 0.2, 0.7, "Van3"));
+        smallVehicles.add(VehicleFactory.createVehicle("Van",4, 0.05, 1.0, "Van4"));
 
 
         List<Vehicle> bigVehicles = new ArrayList<>(bt1.capicity());
 
-        bigVehicles.add(new Bus(1, 0.5, 0.7, "Bus1"));
-        bigVehicles.add(new Bus(2, 0.05, 0.01, "Bus2"));
-        bigVehicles.add(new Bus(3, 0.01, 0.05,"Bus3"));
+        bigVehicles.add(VehicleFactory.createVehicle("Bus",1, 0.5, 0.7, "Bus1"));
+        bigVehicles.add(VehicleFactory.createVehicle("Bus",2, 0.05, 0.01, "Bus2"));
+        bigVehicles.add(VehicleFactory.createVehicle("Bus",3, 0.01, 0.05,"Bus3"));
 
-        bigVehicles.add(new Truck(1, 0.3, 0.09,"Truck1"));
-        bigVehicles.add(new Truck(2, 0.05, 0.7,"Truck2"));
-        bigVehicles.add(new Truck(3, 0.2,0.3 ,"Truck3"));
+        bigVehicles.add(VehicleFactory.createVehicle("Truck",1, 0.3, 0.09,"Truck1"));
+        bigVehicles.add(VehicleFactory.createVehicle("Truck",2, 0.05, 0.7,"Truck2"));
+        bigVehicles.add(VehicleFactory.createVehicle("Truck",3, 0.2,0.3 ,"Truck3"));
 
         GasCharger employee1 = new GasCharger(1,"Milica", "Krmpotic");
         BatteryCharger employee2 = new BatteryCharger(2,"Milutin", "Krmpotic");
